@@ -1,0 +1,19 @@
+Explicación del Código:
+
+    HTML:
+
+        Tiene formularios para registrar clientes, crear cuentas y realizar movimientos.
+
+        Hay botones para consultar el saldo y realizar depósitos o retiros.
+
+    CSS:
+
+        Estiliza la interfaz con un diseño limpio y responsive para que se vea bien en diferentes dispositivos.
+
+    JavaScript:
+
+        Crea un objeto cliente con datos como nombre, apellido, DNI, correo y contraseña, y lo guarda en un array.
+
+        Permite crear una cuenta para cada cliente con un saldo inicial, que también se guarda en un array.
+
+        Implementa funcionalidades para consultar saldo, realizar depósitos y retiros.

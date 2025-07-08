@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fintech - Sistema de Gestión</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fintech - Sistema Bancario</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <div class="container">
-        <h1>Sistema de Gestión Fintech</h1>
-
-        <!-- Formulario de Cliente -->
-        <div class="form-container">
-            <h2>Registrar Cliente</h2>
-            <form id="formCliente">
-                <input type="text" id="nombre" placeholder="Nombre" required>
-                <input type="text" id="apellido" placeholder="Apellido" required>
-                <input type="text" id="dni" placeholder="DNI" required>
-                <input type="email" id="correo" placeholder="Correo Electrónico" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <button type="submit">Registrar Cliente</button>
-            </form>
-        </div>
-
-        <!-- Formulario de Cuenta -->
-        <div class="form-container">
-            <h2>Crear Cuenta</h2>
-            <form id="formCuenta">
-                <input type="text" id="codigoCuenta" placeholder="Código de Cuenta" required>
-                <input type="number" id="saldoInicial" placeholder="Saldo Inicial" required>
-                <button type="submit">Crear Cuenta</button>
-            </form>
-        </div>
-
-        <!-- Consulta de Saldo -->
-        <div class="consulta-saldo">
-            <h2>Consultar Saldo</h2>
-            <button id="consultarSaldo">Ver Saldo</button>
-            <div id="saldoActual"></div>
-        </div>
-
-        <!-- Movimientos -->
-        <div class="movimientos">
-            <h2>Realizar Movimiento</h2>
-            <input type="number" id="monto" placeholder="Monto" required>
-            <button id="depositar">Depositar</button>
-            <button id="retirar">Retirar</button>
-        </div>
+  <div class="container">
+    <!-- LOGIN -->
+    <div id="login">
+      <h2>Iniciar Sesión</h2>
+      <input type="email" id="loginEmail" placeholder="Correo electrónico" />
+      <input type="password" id="loginPassword" placeholder="Contraseña" />
+      <button class="btn" onclick="login()">Ingresar</button>
+      <p>¿No tenés cuenta? <a href="#" onclick="mostrarRegistro()">Registrarse</a></p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- REGISTRO -->
+    <div id="registro">
+      <h2>Registro</h2>
+      <input type="text" id="nombre" placeholder="Nombre" />
+      <input type="text" id="apellido" placeholder="Apellido" />
+      <input type="text" id="dni" placeholder="DNI" />
+      <input type="email" id="email" placeholder="Correo electrónico" />
+      <input type="password" id="password" placeholder="Contraseña" />
+      <button class="btn" onclick="registrar()">Registrar</button>
+      <p>¿Ya tenés cuenta? <a href="#" onclick="mostrarLogin()">Iniciar sesión</a></p>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard">
+      <h2>Bienvenido, <span id="nombreUsuario"></span></h2>
+      <div class="nav">
+        <button class="btn" onclick="mostrarSeccion('cuenta')">Cuenta</button>
+        <button class="btn" onclick="mostrarSeccion('operaciones')">Operaciones</button>
+        <button class="btn" onclick="mostrarSeccion('movimientos')">Movimientos</button>
+        <button class="btn" onclick="logout()">Salir</button>
+      </div>
+
+      <!-- CUENTA -->
+      <div id="cuenta">
+        <h3>Datos de la Cuenta</h3>
+        <p><strong>Código:</strong> <span id="codigoCuenta"></span></p>
+        <p><strong>Saldo:</strong> $<span id="saldoCuenta"></span></p>
+      </div>
+
+      <!-- OPERACIONES -->
+      <div id="operaciones">
+        <h3>Depósito / Retiro</h3>
+        <select id="tipo">
+          <option value="deposito">Depósito</option>
+          <option value="retiro">Retiro</option>
+        </select>
+        <input type="number" id="monto" placeholder="Monto" />
+        <button class="btn" onclick="realizarOperacion()">Aceptar</button>
+      </div>
+
+      <!-- MOVIMIENTOS -->
+      <div id="movimientos">
+        <h3>Historial de Movimientos</h3>
+        <ul id="listaMovimientos"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
