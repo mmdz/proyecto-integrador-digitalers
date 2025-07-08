@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintech - Sistema de Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sistema de Gestión Fintech</h1>
+
+        <!-- Formulario de Cliente -->
+        <div class="form-container">
+            <h2>Registrar Cliente</h2>
+            <form id="formCliente">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellido" placeholder="Apellido" required>
+                <input type="text" id="dni" placeholder="DNI" required>
+                <input type="email" id="correo" placeholder="Correo Electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Registrar Cliente</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Cuenta -->
+        <div class="form-container">
+            <h2>Crear Cuenta</h2>
+            <form id="formCuenta">
+                <input type="text" id="codigoCuenta" placeholder="Código de Cuenta" required>
+                <input type="number" id="saldoInicial" placeholder="Saldo Inicial" required>
+                <button type="submit">Crear Cuenta</button>
+            </form>
+        </div>
+
+        <!-- Consulta de Saldo -->
+        <div class="consulta-saldo">
+            <h2>Consultar Saldo</h2>
+            <button id="consultarSaldo">Ver Saldo</button>
+            <div id="saldoActual"></div>
+        </div>
+
+        <!-- Movimientos -->
+        <div class="movimientos">
+            <h2>Realizar Movimiento</h2>
+            <input type="number" id="monto" placeholder="Monto" required>
+            <button id="depositar">Depositar</button>
+            <button id="retirar">Retirar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
