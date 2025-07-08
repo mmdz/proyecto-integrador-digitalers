@@ -35,6 +35,7 @@
       <div class="nav">
         <button class="btn" onclick="mostrarSeccion('cuenta')">Cuenta</button>
         <button class="btn" onclick="mostrarSeccion('operaciones')">Operaciones</button>
+        <button class="btn" onclick="mostrarSeccion('transferencias')">Transferencias</button>
         <button class="btn" onclick="mostrarSeccion('movimientos')">Movimientos</button>
         <button class="btn" onclick="logout()">Salir</button>
       </div>
@@ -55,6 +56,14 @@
         </select>
         <input type="number" id="monto" placeholder="Monto" />
         <button class="btn" onclick="realizarOperacion()">Aceptar</button>
+      </div>
+
+      <!-- TRANSFERENCIAS -->
+      <div id="transferencias">
+        <h3>Transferencia a Otro Cliente</h3>
+        <select id="destinatario"></select>
+        <input type="number" id="montoTransferencia" placeholder="Monto a transferir" />
+        <button class="btn" onclick="realizarTransferencia()">Transferir</button>
       </div>
 
       <!-- MOVIMIENTOS -->
