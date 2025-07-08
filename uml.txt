@@ -1,0 +1,39 @@
++------------------+
+|     Cliente      |
++------------------+
+| - id: number     |
+| - nombre: string |
+| - apellido: string |
+| - dni: string    |
+| - email: string  |
+| - password: string |
+| - cuenta: Cuenta |
++------------------+
+| +constructor(...)|
++------------------+
+
+           1
+           |
+           | tiene
+           v
++------------------+
+|     Cuenta       |
++------------------+
+| - codigo: string |
+| - saldo: number  |
+| - movimientos:   |
+|   Array<Movimiento> |
++------------------+
+| +constructor(...)|
+| +operar(tipo,    |
+|   monto, detalle): boolean |
++------------------+
+
++---------------------------+
+|     Movimiento (objeto)   |
++---------------------------+
+| - tipo: string            |
+| - monto: number           |
+| - detalle: string         |
+| - fecha: string           |
++---------------------------+
