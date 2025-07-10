@@ -1,3 +1,4 @@
+
 class Cliente {
   constructor(nombre, apellido, dni, email, password) {
     this.id = Date.now();
@@ -8,7 +9,20 @@ class Cliente {
     this.password = password;
     this.cuenta = new Cuenta(this.id);
   }
+
+  verificarPassword(input) {
+    return input === this.password;
+  }
+
+  cambiarPassword(actual, nueva) {
+    if (this.verificarPassword(actual)) {
+      this.password = nueva;
+      return true;
+    }
+    return false;
+  }
 }
+
 
 class Cuenta {
   constructor(clienteId) {
